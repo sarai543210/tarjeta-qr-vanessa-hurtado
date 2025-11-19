@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital Premium - Vanessa Hurtado</title>
+    
+    <link rel="stylesheet" href="hoja.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    </head>
+<body>
+    <div class="card-container">
+        
+        <div class="header-background">
+            <img src="fondo de portada.jpg" alt="Fondo de montañas y camión" class="background-image">
+            <img src="logo.jpeg" alt="Logo Transportes Ocaña" class="logo">
+        </div>
+        
+        <div class="overlay-oscuro"></div> 
+        
+        <div class="profile-section">
+            <div class="profile-photo-wrapper">
+                <img src="vanesa.jpeg" alt="Foto de perfil de Sarai Mamani" class="profile-photo">
+            </div>
+        </div>
+
+        <div class="info-section-flowing">
+            <h1>Vanessa Hurtado</h1>
+            <p class="role">Área de Contable</p>
+            <p class="company">Empresa de Transportes Ocaña</p>
+
+            <div class="contact-buttons-outside">
+                <a href="https://wa.me/59161005514" class="icon-button whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:vanessa@transportesocana.com" class="icon-button email"><i class="fas fa-envelope"></i></a>
+                <a href="https://maps.app.goo.gl/qFPBkx6gLShvf4UQA" target="_blank" class="icon-button location"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="content-sections-wrapper">
+            
+            <div class="content-block contact-details">
+                <div class="block-header">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="header-title">Contacto</span>
+                </div>
+                
+                <p class="detail-label red-text">Celular</p>
+                <p class="detail-value">+591 61005514</p>
+                
+                <p class="detail-label red-text">Correo electrónico</p>
+                <p class="detail-value">vanessa@transportesocana.com</p>
+                
+                <p class="detail-label red-text">Dirección</p>
+                <p class="detail-address">La Paz - Bolivia<br>Avenida 16 de Julio Nº 1479 (El Prado) Edificio San Pablo, Piso 12, Oficina 1203</p>
+            </div>
+            
+            <div class="content-block company-banner">
+                <img src="camion portada.jpg" alt="Camión grande de Transportes Ocaña">
+            </div>
+            
+            <div class="content-block description">
+                <h3 class="red-text">TRANSPORTES OCAÑA</h3>
+                <p>Somos una empresa que se especializa en el servicio de Transporte de Carga a nivel Nacional e Internacional, que durante más de 25 años se encuentra al servicio de empresas exportadoras, importadoras y público en general. ¡Confíe su carga a expertos!</p>
+            </div>
+
+            <div class="content-block social-media">
+                <h3 class="red-text">Nuestras Redes Sociales</h3>
+                <p class="social-text">No te olvides de visitarnos y seguirnos para mantenerte al tanto de nuestras novedades.</p>
+                
+                <a href="https://www.facebook.com/transporteocana" target="_blank" class="social-link facebook-link">
+                    <div><i class="fab fa-facebook-f facebook-icon"></i> Facebook</div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                
+                <a href="https://www.transocana.com" target="_blank" class="social-link website-link">
+                    <div><i class="fas fa-globe website-icon"></i> Página Web</div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+        </div> <div class="fixed-buttons-wrapper">
+            <a href="javascript:void(0);" onclick="downloadVCard()" class="fixed-button add-contact">
+                <i class="fas fa-user-plus"></i> AÑADIR A CONTACTOS
+            </a>
+            <a href="tel:+59175825034" class="fixed-button call-now">
+                <i class="fas fa-phone"></i> LLAMAR AHORA
+            </a>
+        </div>
+        
+    </div> <script>
+        // La URL de la tarjeta se mantiene en vcardData
+        const vcardData = `BEGIN:VCARD
+VERSION:3.0
+N:Hurtado;Vanessa;;;
+FN:Vanessa Hurtado
+ORG:Empresa de Transportes Ocaña
+TITLE:Área de Contable
+TEL;TYPE=CELL:+59161005514
+EMAIL:vanessa@transportesocana.com
+ADR;TYPE=WORK:;;Avenida 16 de Julio N° 1479 (El Prado) Edificio San Pablo, Piso 12, Oficina 1203;La Paz;;;Bolivia
+URL:https://vanessa543210.github.io/tarjeta-qr-vanessa/
+END:VCARD`;
+
+        // FUNCIÓN PARA DESCARGAR V-CARD (Mantenida para el botón flotante)
+        function downloadVCard() {
+            const blob = new Blob([vcardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Vanessa_Hurtado_TransportesOcana.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
